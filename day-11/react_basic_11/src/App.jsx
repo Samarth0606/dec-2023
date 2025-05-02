@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import React from "react";
 import PropDrilling from "./components/PropDrilling";
 import A from "./components/A";
+import Counter from "./components/Counter";
 // import Profile from "./components/Profile";
 
 const Profile = React.lazy(()=>import("./components/Profile"))
@@ -13,8 +14,8 @@ const App = ()=>{
   return (
   <>
     <h1>Hello from App</h1>
-    <PropDrilling></PropDrilling>
-
+    {/* <PropDrilling></PropDrilling> */}
+<Counter />
   {/* <A/>     */}
 <Routes>
       <Route element={ <Home /> } path="/" />
