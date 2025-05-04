@@ -3,6 +3,7 @@ import { BiSolidOffer } from "react-icons/bi";
 import { IoMdHelpBuoy } from "react-icons/io";
 import { FaRegUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = ()=>{
     return(
@@ -13,19 +14,19 @@ const Header = ()=>{
                 <ul className="flex" >
                     <div className="flex mx-4">
                         <span className="mt-1"> <IoSearch /> </span>
-                        <li className="px-2">SEARCH</li>
+                        <li className="px-2"> <Link> SEARCH </Link> </li>
                     </div>
                     <div className="flex mx-4">
                         <span className="mt-1"> <BiSolidOffer /> </span>
-                        <li className="px-2">OFFER</li>
+                        <li className="px-2"><Link to='/offers'>OFFER</Link></li>
                     </div>
                     <div className="flex mx-4">
                         <span className="mt-1"> <IoMdHelpBuoy/> </span>
-                        <li className="px-2">HELP</li>
+                        <li className="px-2"><Link to='/help'>HELP</Link></li>
                     </div>
                     <div className="flex mx-4">
                         <span className="mt-1"> <FaRegUser /> </span>
-                        <li className="px-2">SIGNIN</li>
+                        <li className="px-2"><Link to='/signin'>SIGNIN</Link></li>
                     </div>
                     <div className="flex mx-4">
                         <span className="mt-1"> <FaShoppingCart/> </span>
