@@ -1,11 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { addItem } from '../utils/cartSlice';
 
 const RestaurantDetails = () => {
     const {idd} = useParams()
     const [foodItemDetails,setFoodItemDetails] = useState([]);
 
+    const dispatch = useDispatch();
+    function handleAddItem(foodItem){
+        dispatch(addItem(foodItem)) //payload
+    }
 
     useEffect(()=>{
         const API = `https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.99740&lng=79.00110&restaurantId=${idd}&submitAction=ENTER`
@@ -38,7 +44,7 @@ const RestaurantDetails = () => {
 
                         <button
                         className="border bg-green-300 h-8 relative top-16 right-5"
-                        // onClick={() => handleAddItem(foodItem)}
+                        onClick={() => handleAddItem(foodItem)}
                         >
                         Add +
                         </button>
