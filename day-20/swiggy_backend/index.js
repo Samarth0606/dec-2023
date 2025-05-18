@@ -1,6 +1,7 @@
 import express from 'express';
 const app = express();
 import mongoose from 'mongoose';
+import {restRoutes} from "./routes/restaurant.routes.js"
 
 mongoose.connect('mongodb+srv://samarthvohraindia:TqyEEJgrzyHbJJCQ@cluster0.vpxahlo.mongodb.net/')
 .then(()=>{
@@ -16,6 +17,8 @@ app.use(express.json()) //middleware
 app.get('/' , (req,res)=>{
     res.send("Welcome to root route")
 })
+
+restRoutes(app);
 
 
 const PORT = 8000;
